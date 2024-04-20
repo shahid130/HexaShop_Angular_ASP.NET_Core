@@ -1,0 +1,103 @@
+
+<head>
+  <link rel="stylesheet" type="text/css" href="../../../assets/css/font-awesome.css">
+  <link rel="stylesheet" type="text/css" href="https://localhost:7127/assets/cartcss/style.css">
+  <link rel="stylesheet" type="text/css" href="https://localhost:7127/assets/cartcss/bootstrap.min.css">
+</head>
+
+
+  <div class="untree_co-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mb-5 mb-md-0">
+          <h2 class="h3 mb-3 text-black">Your Order</h2>
+          <div class="p-3 p-lg-5 border bg-white">
+            <table class="table site-block-order-table mb-5">
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody >
+                <tr *ngFor="let orderItem of orderItems">
+                  <td> {{orderItem.productName}} <strong class="mx-2">x</strong> {{orderItem.productOrderQuantity}}</td>
+                  <td>{{orderItem.productPrice*orderItem.productOrderQuantity | currency}}</td>
+                </tr>
+                <tr>
+                  <td class="text-black font-weight-bold"><strong>Cart Subtotal</strong></td>
+                  <td class="text-black">{{totalPrice | currency}}</td>
+                </tr>
+                <tr>
+                  <td class="text-black font-weight-bold"><strong>Shipping Charge</strong></td>
+                  <td class="text-black">$100.00</td>
+                </tr>
+                <tr>
+                  <td class="text-black font-weight-bold"><strong>Order Total</strong></td>
+                  <td class="text-black font-weight-bold">
+                    <strong>{{totalPrice+100 | currency}}</strong>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="form-group">
+              <button class="btn btn-black btn-lg py-3 btn-block" routerLink="/successfulorder">Place Order</button>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-md-6">
+          <div class="row mb-5">
+            <div class="col-md-12">
+
+              <h2 class="h3 mb-3 text-black">Billing Details</h2>
+              <!--
+  <div class="p-3 p-lg-5 border bg-white">
+
+    @foreach (var userItem in Model.Item3.usersData)
+    {
+    if (userItem.userID == Variable.authentication_users)
+    {
+
+    <div class="form-group row">
+      <div class="col-md-12">
+        <label for=“c_phone” class=“text-black”><strong>Name:</strong></label>
+        <p>@userItem.userName</p>
+      </div>
+      <div class="col-md-12">
+        <label for=“c_phone” class=“text-black”><strong>Email:</strong></label>
+        <p>@userItem.userEmail</p>
+      </div>
+
+      <form asp-controller="Cart" asp-action="ConfirmedOrder" method="post">
+        <div class="col-md-12">
+          <label for="c_phone" class="text-black"> <strong>Phone <span class="text-danger">*</span></strong></label>
+        </div>
+        <div class="col-md-12">
+          <input type="text" id="userNumber" name="UserNumber" placeholder="Phone Number" value="@userItem.userNumber">
+        </div>
+        <div class="col-md-12">
+          <label for="c_address" class="text-black"><strong>Address <span class="text-danger">*</span></strong></label>
+        </div>
+        <div class="col-md-12">
+          <input type="text" id="userAdress" name="userAdress" placeholder="Street address" value=" @userItem.userAdress">
+        </div>
+        <div class="col-md-12 text-center" style="padding-top: 10px;">
+          <button type="submit" class="btn btn-black btn-lg py-3 btn-block">Place Order</button>
+        </div>
+      </form>
+
+    </div>
+    }
+    }
+  </div>
+    -->
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+-->

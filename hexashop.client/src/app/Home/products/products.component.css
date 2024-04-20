@@ -1,0 +1,89 @@
+/* Sidebar Styles */
+.shop__sidebar {
+  background-color: #f9f9f9;
+  padding: 20px;
+}
+
+.sidebar__categories {
+  margin-bottom: 30px;
+}
+
+  .sidebar__categories .section-title h4 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+
+.accordion .card {
+  margin-bottom: 10px;
+}
+
+  .accordion .card a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+    .accordion .card a:hover {
+      background-color: #e5e5e5;
+    }
+
+    .accordion .card a.active {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2) !important;
+      background-color: #e5e5e5;
+    }
+
+/* Filter Styles */
+.sidebar__filter {
+  margin-top: 30px;
+}
+
+  .sidebar__filter .section-title h4 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+
+.filter-range-wrap {
+  margin-bottom: 20px;
+}
+
+  .filter-range-wrap .range-slider {
+    margin-top: 10px;
+  }
+
+.price-input {
+  margin-bottom: 15px;
+}
+
+  .price-input p {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+
+  .price-input input[type="number"] {
+    width: 80px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+
+a.filter-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ca1515;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+  a.filter-button:hover {
+    background-color: #af1313;
+  }
+
+

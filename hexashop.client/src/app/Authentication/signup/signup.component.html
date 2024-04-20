@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Signup page</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+<body>
+  <div class="pp" id="top">
+    <div class="ic">
+      <h2>Sign Up</h2>
+      <form (ngSubmit)="signUp()" [formGroup]="signUpForm">
+        <div class="field">
+          <span class="fa fa-user"></span>
+          <input type="text" placeholder="Enter Your Name" formControlName="userName">
+        </div>
+        <div class="field space">
+          <span class="fa fa-envelope"></span>
+          <input type="text" placeholder="Enter your Email" formControlName="userEmail">
+        </div>
+        <div class="field space">
+          <span class="fa fa-phone"></span>
+          <input type="text" placeholder="Enter your Number" formControlName="userNumber">
+        </div>
+        <div *ngIf="signUpForm.get('userNumber')?.errors">
+        </div>
+        <div class="field space">
+          <span class="fa fa-home"></span>
+          <input type="text" placeholder="Enter your Adress" formControlName="userAddress">
+        </div>
+        <div class="field space">
+          <span class="fa fa-lock"></span>
+          <input [type]="type" class="pass-key" placeholder="Create Password" formControlName="userPassword"><button (click)="hideShowPass()" type="button" class="bg-white text-muted"> <span class="fa {{eyeIcon}}"></span> </button>
+        </div>
+        <!-- <div class="field space">
+    <span class="fa fa-lock"></span>
+    <input [type]="type" class="pass-key" placeholder="Confirm Password" /><button (click)="hideShowPass()" type="button" class="bg-white text-muted"> <span class="fa {{eyeIcon}}"></span> </button>
+  </div>-->
+        <div *ngIf="signupError" class="error-message">{{ signupError }}</div>
+        <div class="field space">
+          <input type="submit" value="Sign Up">
+        </div>
+      </form>
+      <!-- <div class="login">
+        Or login with
+      </div>
+      <div class="links">
+        <div class="facebook">
+          <i class="fab fa-facebook-f"><span>Facebook</span></i>
+        </div>
+        <div class="instagram">
+          <i class="fab fa-instagram"><span>Instagram</span></i>
+        </div>
+      </div>
+      -->
+      <div class="login">
+        Already have an account?
+        <a routerLink="/signin">Login</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

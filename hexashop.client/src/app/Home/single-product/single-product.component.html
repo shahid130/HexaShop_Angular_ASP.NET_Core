@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Products</title>
+  <link rel="stylesheet" type="text/css" href="../../../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../assets/css/font-awesome.css">
+  <link rel="stylesheet" href="../../../assets/css/templatemo-hexashop.css">
+</head>
+<body>
+  <section class="section" id="products">
+    <div class="container">
+      <div class="section-heading"></div>
+
+      <div class="row">
+        <div class="col-lg-4 col-md-3">
+          <div class="product__details__pic">
+            <img src="https://localhost:7127/assets/images/{{singleProduct.productImageName}}" alt="" />
+          </div>
+        </div>
+
+
+
+        <div class="col-lg-8">
+          <div class="product__details__text">
+            <h3>{{singleProduct.productName}} <span>Brand: SKMEIMore Men Watches from SKMEI</span></h3>
+
+            <div class="product__details__price">{{singleProduct.productPrice |currency}} <span>{{singleProduct.productPrice+100 |currency}}</span></div>
+            <p>
+              {{singleProduct.productDetails}}
+            </p>
+
+            <div class="product__details__widget">
+              <ul>
+                <li>
+                  <span>Availability:</span>
+                  <div class="stock__checkbox">
+                    <label for="stockin">
+                      {{stock}}
+                    </label>
+                  </div>
+                </li>
+                <li>
+                  <span>Available color:</span>
+                  <div class="color__checkbox">
+                    <label *ngFor="let color of colors" [for]="'color-' + color">
+                      <input type="radio" name="color__radio" [id]="'color-' + color" [value]="color" [checked]="color === selectedColor" (change)="selectColor(color)">
+                      <span class="checkmark" [style.background-color]="color"></span>
+                    </label>
+                  </div>
+                </li>
+
+                <li>
+                  <span>Available size:</span>
+                  <div class="size__btn">
+                    <label *ngFor="let size of ArrayOfSizes" [class.active]="selectedSize === size">
+                      <input type="radio" [value]="size" (change)="SelectSize(size)">
+                      {{ size }}
+                    </label>
+                  </div>
+                </li>
+              </ul>
+              <div class="product__details__button">
+                <div class="quantity">
+                  <span>Quantity:</span>
+                  <div class="pro-qty">
+                    <div class="input-group mb-3 d-flex align-items-center quantity-container" style="max-width: 120px;">
+                      <div class="input-group-prepend">
+                        <button (click)="decrease(singleProduct)" class="btn btn-outline-black decrease" type="button">&minus;</button>
+                      </div>
+                      <input type="text" class="form-control text-center quantity-amount" value="{{quantity}}" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                      <div class="input-group-append">
+                        <button (click)="increase(singleProduct)" class="btn btn-outline-black " type="button">&plus;</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a class="cart-btn" (click)="AddToCart(singleProduct)" routerLink="/products"><span class="icon_bag_alt"></span> Add to cart</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
+

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" type="text/css" href="../../../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../assets/css/font-awesome.css">
+  <link rel="stylesheet" href="../../../assets/css/templatemo-hexashop.css">
+
+</head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** --
+  <div id="preloader">
+    <div class="jumper">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="index.html" class="logo">
+              <img src="../../../assets/images/logo.png" alt="Logo">
+            </a>
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li class="scroll-to-section"><a routerLink="homepage" class="active">Home</a></li>
+              <li class="scroll-to-section"><a (click)="scrollToSection('men')">Men's</a></li>
+              <li class="scroll-to-section"><a (click)="scrollToSection('women')">Women's</a></li>
+              <li class="scroll-to-section"><a (click)="scrollToSection('kids')">Kid's</a></li>
+              <li class="scroll-to-section"><a routerLink="products">Products</a></li>
+              <li class="scroll-to-section"><a routerLink="cartview">Carts <span *ngIf="totalCartItems>0"> ({{totalCartItems}})</span></a></li>
+              <li class="scroll-to-section"><a routerLink="userprofile"><span class="fa fa-user"></span> {{navName}}</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+</body>
+</html>
